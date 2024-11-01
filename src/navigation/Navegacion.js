@@ -1,20 +1,27 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import Inicio from '../screens/Inicio';
 import Productos from '../screens/Productos';
 import Clientes from '../screens/Clientes';
 
-const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function Navegacion() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Inicio" component={Inicio} />
-        <Stack.Screen name="Productos" component={Productos} />
-        <Stack.Screen name="Clientes" component={Clientes} />
-      </Stack.Navigator>
+      <Drawer.Navigator 
+      initialRouteName="Inicio"
+      screenOptions={{
+        drawerStyle: {
+          backgroundColor: '#fff',
+          width: 240,
+        },
+      }}>
+        <Drawer.Screen name="Inicio" component={Inicio} />
+        <Drawer.Screen name="Productos" component={Productos} />
+        <Drawer.Screen name="Clientes" component={Clientes} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
