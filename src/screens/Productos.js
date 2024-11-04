@@ -17,7 +17,7 @@ export default function Productos() {
       <FlatList
         data={productos}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <Text style={styles.itemText}>{item.descripcion}</Text>}
+        renderItem={({ item }) => <Text style={styles.itemText}>{item.id} - {item.descripcion}</Text>}
       />
     </View>
   );

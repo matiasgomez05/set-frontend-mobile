@@ -1,11 +1,18 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
-export default function Inicio({ navigation }) {
+export default function Inicio() {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={ styles.container }>
       <Text>Pantalla de Inicio</Text>
-      <Button title="Ir a Productos" onPress={() => navigation.navigate('Productos')} />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
